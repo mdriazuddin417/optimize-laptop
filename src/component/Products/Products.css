@@ -1,6 +1,7 @@
 .shop-container {
   display: grid;
-  grid-template-columns: 4fr 1fr;
+  grid-template-columns: 4fr 1.5fr;
+  padding: 50px 25px;
 }
 .product-container {
   display: grid;
@@ -8,4 +9,6 @@
   gap: 20px;
 }
 .cart-container {
+  background-color: #ddd;
+  border-radius: 10px;
 }
