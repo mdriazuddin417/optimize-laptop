@@ -1,6 +1,12 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is My live project [Optimize Laptop](https://optimize-laptop-collection.netlify.app/).
+
+## Description
+
+This site is very different site and optimize laptop website.
+I want vary hard work and ready this project.
+this website buy Laptop for your choose.
 
 ## Available Scripts
 
