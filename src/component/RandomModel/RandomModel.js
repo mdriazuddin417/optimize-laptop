@@ -5,6 +5,7 @@ const RandomModel = ({ cart }) => {
 
   useEffect(() => {
     const randomNumber = Math.floor(Math.random() * (4 - 0 + 1)) + 0;
+
     setProduct(cart[randomNumber]);
   }, [cart]);
 

@@ -12,3 +12,15 @@
   width: 100px;
   clip-path: circle(42% at 50% 50%);
 }
+@media (max-width: 500px) {
+  .cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    padding: 5px;
+  }
+}

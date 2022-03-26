@@ -7,6 +7,8 @@ function App() {
   return (
     <div>
       <Header></Header>
+      <h1 className="text-success text-center">Optimize Laptop</h1>
+      <h3 className="text-secondary text-center">Choose and Fashion</h3>
       <Products></Products>
     </div>
   );

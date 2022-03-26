@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { Alert } from "react-bootstrap";
+
 import Modal from "react-modal";
+
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 import RandomModel from "../RandomModel/RandomModel";
@@ -21,11 +24,13 @@ const Products = () => {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
   const [modalIsOpen, setIsOpen] = useState(false);
+
   useEffect(() => {
     fetch("public.json")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
+  //================Alert==============
 
   //===========button Onclick listener========
   const handleAddToCart = (selectedProduct) => {
@@ -34,14 +39,17 @@ const Products = () => {
       (product) => product.name === selectedProduct.name
     );
     if (addedName) {
-      alert("Not a alow ");
+      alert("Product All Ready Collect !!");
     } else if (cart.length === 4) {
       alert("Please Help me");
     } else {
       setCart(newCart);
     }
   };
-
+  //===============Remove Product===========
+  const removeItem = () => {
+    setCart([]);
+  };
   //==============Random Cart show=====
   function openModal() {
     setIsOpen(true);
@@ -51,17 +59,6 @@ const Products = () => {
     setIsOpen(false);
   }
 
-  // const handleBtn = () => {
-  //   const randomNumber = Math.floor(Math.random() * 10 + 1);
-  //   if (randomNumber <= cart.length - 1) {
-  //     console.log(cart.length);
-  //     console.log(randomNumber);
-  //     console.log(cart[randomNumber]);
-  //     <RandomModel cart={cart[randomNumber]}></RandomModel>;
-  //   } else if (cart.length < 1) {
-  //     alert("please enter a valid product");
-  //   }
-  // };
   Modal.setAppElement("#root");
   return (
     <div className="shop-container">
@@ -83,7 +80,9 @@ const Products = () => {
         <button onClick={openModal} className="btn btn-warning my-2">
           Random Choose Product
         </button>
-        <button className="btn btn-info">All Remove Product</button>
+        <button className="btn btn-info" onClick={removeItem}>
+          All Remove Product
+        </button>
       </div>
       <div>
         <Modal
