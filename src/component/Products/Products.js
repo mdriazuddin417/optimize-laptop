@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Alert } from "react-bootstrap";
 
 import Modal from "react-modal";
 
@@ -41,7 +40,7 @@ const Products = () => {
     if (addedName) {
       alert("Product All Ready Collect !!");
     } else if (cart.length === 4) {
-      alert("Please Help me");
+      alert("Not allow more than 4 products");
     } else {
       setCart(newCart);
     }
