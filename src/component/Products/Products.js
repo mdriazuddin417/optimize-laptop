@@ -1,15 +1,26 @@
 import React, { useEffect, useState } from "react";
-
+import Modal from "react-modal";
 import Cart from "../Cart/Cart";
-
 import Product from "../Product/Product";
-import RandomModal from "../RandomModal/RandomModal";
+import RandomModel from "../RandomModel/RandomModel";
+
 import "./Products.css";
+
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
 
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
-
+  const [modalIsOpen, setIsOpen] = useState(false);
   useEffect(() => {
     fetch("public.json")
       .then((res) => res.json())
@@ -32,18 +43,26 @@ const Products = () => {
   };
 
   //==============Random Cart show=====
-  const handleBtn = () => {
-    const randomNumber = Math.floor(Math.random() * 10 + 1);
-    if (randomNumber <= cart.length - 1) {
-      console.log(cart.length);
-      console.log(randomNumber);
-      console.log(cart[randomNumber]);
-      <RandomModal cart={cart[randomNumber]}></RandomModal>;
-    } else if (cart.length < 1) {
-      alert("please enter a valid product");
-    }
-  };
+  function openModal() {
+    setIsOpen(true);
+  }
 
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  // const handleBtn = () => {
+  //   const randomNumber = Math.floor(Math.random() * 10 + 1);
+  //   if (randomNumber <= cart.length - 1) {
+  //     console.log(cart.length);
+  //     console.log(randomNumber);
+  //     console.log(cart[randomNumber]);
+  //     <RandomModel cart={cart[randomNumber]}></RandomModel>;
+  //   } else if (cart.length < 1) {
+  //     alert("please enter a valid product");
+  //   }
+  // };
+  Modal.setAppElement("#root");
   return (
     <div className="shop-container">
       <div className="product-container cols-lg-8">
@@ -61,10 +80,23 @@ const Products = () => {
         {cart.map((product) => (
           <Cart key={product.id} product={product}></Cart>
         ))}
-        <button onClick={handleBtn} className="btn btn-warning my-2">
+        <button onClick={openModal} className="btn btn-warning my-2">
           Random Choose Product
         </button>
         <button className="btn btn-info">All Remove Product</button>
+      </div>
+      <div>
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          style={customStyles}
+          contentLabel="Example Modal"
+        >
+          <RandomModel cart={cart}></RandomModel>
+          <button className="btn btn-primary" onClick={closeModal}>
+            Close
+          </button>
+        </Modal>
       </div>
     </div>
   );
