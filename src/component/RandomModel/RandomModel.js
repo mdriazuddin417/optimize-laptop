@@ -10,7 +10,7 @@ const RandomModel = ({ cart }) => {
   }, [cart]);
 
   return (
-    <div className="cart">
+    <div className="cart bg-info bg-opacity-10 p-3">
       <img src={product?.picture} alt="" />
       <h4>{product?.name}</h4>
     </div>

@@ -4,12 +4,10 @@ import Header from "./component/Header/Header";
 import Products from "./component/Products/Products";
 import Question from "./component/Quesion/Question";
 import Footer from "./component/Footer/Footer";
-import AlertModal from "./component/AlertModal/AlertModal";
 
 function App() {
   return (
     <div>
-      <AlertModal></AlertModal>
       <Header></Header>
       <h1 className="text-success text-center">Optimize Laptop</h1>
       <h3 className="text-secondary text-center">Choose and Fashion</h3>
