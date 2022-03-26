@@ -11,8 +11,8 @@ const RandomModel = ({ cart }) => {
 
   return (
     <div className="cart">
-      <img src={product.picture} alt="" />
-      <h4>{product.name}</h4>
+      <img src={product?.picture} alt="" />
+      <h4>{product?.name}</h4>
     </div>
   );
 };

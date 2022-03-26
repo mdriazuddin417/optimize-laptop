@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import Modal from "react-modal";
+import AlertModal from "../AlertModal/AlertModal";
 
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
