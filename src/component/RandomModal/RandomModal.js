@@ -12,8 +12,9 @@ const customStyles = {
 };
 
 const RandomModal = ({ cart }) => {
-  console.log(cart);
+  const { name, picture } = cart;
   const [modalIsOpen, setIsOpen] = useState(false);
+
   function openModal() {
     setIsOpen(true);
   }
@@ -34,7 +35,10 @@ const RandomModal = ({ cart }) => {
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <h1>My name is Riaz</h1>
+        <div className="cart">
+          <img src={picture} alt="" />
+          <h6>{name}</h6>
+        </div>
         <button onClick={closeModal} className="btn btn-info">
           Close Modal
         </button>

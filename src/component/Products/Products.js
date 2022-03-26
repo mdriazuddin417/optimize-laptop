@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Cart from "../Cart/Cart";
 
 import Product from "../Product/Product";
-// import RandomModal from "../RandomModal/RandomModal";
+import RandomModal from "../RandomModal/RandomModal";
 import "./Products.css";
 
 const Products = () => {
@@ -38,7 +38,7 @@ const Products = () => {
       console.log(cart.length);
       console.log(randomNumber);
       console.log(cart[randomNumber]);
-      // <RandomModal cart={cart[randomNumber]}></RandomModal>;
+      <RandomModal cart={cart[randomNumber]}></RandomModal>;
     } else if (cart.length < 1) {
       alert("please enter a valid product");
     }
