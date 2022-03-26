@@ -17,6 +17,8 @@ const Products = () => {
     );
     if (addedName) {
       alert("Not a alow ");
+    } else if (cart.length === 4) {
+      alert("Please Help me");
     } else {
       setCart(newCart);
     }
@@ -33,7 +35,8 @@ const Products = () => {
         ))}
       </div>
       <div className="cart-container ">
-        <h3>Selected Product: {cart.length}</h3>
+        <h3 className="my-5 text-center">Selected Product: {cart.length}</h3>
+
         {cart.map((product) => (
           <Cart key={product.id} product={product}></Cart>
         ))}
