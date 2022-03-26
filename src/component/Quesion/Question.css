@@ -1,0 +1,19 @@
+.question-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px 30px;
+}
+.question {
+  border: 1px solid #ddd;
+  padding: 19px;
+  border-radius: 15px;
+  text-align: justify;
+  box-shadow: 5px 5px 10px 3px #ddd;
+}
+@media (max-width: 850px) {
+  .question-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
+}
