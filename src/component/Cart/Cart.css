@@ -1,0 +1,12 @@
+.cart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  border: 1px solid #ddd;
+}
+
+.cart img {
+  width: 100px;
+  clip-path: circle(42% at 50% 50%);
+}
